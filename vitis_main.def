@@ -1,0 +1,33 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+        Xilinx_Unified_2023.1_0507_1903.tar.gz
+        install_config.txt
+
+%post
+	# update
+	apt update
+	# apt install -y build-essential
+	apt install -y locales
+
+	####
+	locale-gen en_US.UTF-8
+
+	# Install Vitis
+	tar -xzvf Xilinx_Unified_2023.1_0507_1903.tar.gz
+	rm Xilinx_Unified_2023.1_0507_1903.tar.gz
+	cd Xilinx_Unified_2023.1_0507_1903/
+	./xsetup -b Install -a XilinxEULA,3rdPartyEULA -c /install_config.txt
+
+	# cleanup
+	cd /
+	rm install_config.txt
+	rm -r Xilinx_Unified_2023.1_0507_1903/
+
+%environment
+	#source /tools/Xilinx/Vitis/2023.1/settings64.sh
+
+%runscript
+	echo $0
+	echo $@
