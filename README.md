@@ -15,9 +15,16 @@
 sudo singularity build xilinx_2023.2.sif xilinx.def
 ```
 
-## Launching Tools
+## Creating the Links
 ```bash
-singularity exec xilinx_2023.2.sif vivado
-singularity exec xilinx_2023.2.sif vitis
-singularity exec xilinx_2023.2.sif vitis_hls
+ln -s xilinx_2023.2.sif vivado
+ln -s xilinx_2023.2.sif vitis
+ln -s xilinx_2023.2.sif vitis_hls
+```
+
+## Running the Tools
+```bash
+./vivado
+./vitis
+./vitis_hls
 ```
