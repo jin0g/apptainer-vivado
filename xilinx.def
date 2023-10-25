@@ -7,7 +7,7 @@ From: ubuntu:22.04
 
 %post
 	apt update
-	apt install -y python3 xorg locales
+	DEBIAN_FRONTEND=noninteractive apt install -y python3 xorg locales
 	locale-gen en_US.UTF-8
 
 	tar -xzvf FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz
@@ -23,3 +23,6 @@ From: ubuntu:22.04
 
 %environment
 	source /tools/Xilinx/Vivado/2023.2/settings64.sh
+
+%runscript
+	exec $SINGULARITY_NAME $@
