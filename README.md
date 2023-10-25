@@ -8,6 +8,7 @@
 
 ## Preparation
 - Download `FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz` from [download page](https://www.xilinx.com/support/download.html)
+- Put it in the same directory
 
 ## Build
 ```bash
