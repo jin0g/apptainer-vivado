@@ -1,0 +1,25 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%files
+	FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz
+        install_config.txt
+
+%post
+	apt update
+	apt install -y python3 xorg locales
+	locale-gen en_US.UTF-8
+
+	tar -xzvf FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz
+	rm FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz
+
+	cd FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256/
+	./xsetup -b Install -a XilinxEULA,3rdPartyEULA -c /install_config.txt
+	/tools/Xilinx/Vitis/2023.2/scripts/installLibs.sh
+
+	cd /
+	rm install_config.txt
+	rm -r FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256/
+
+%environment
+	source /tools/Xilinx/Vivado/2023.2/settings64.sh
