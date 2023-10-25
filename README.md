@@ -7,10 +7,9 @@
 - Over 400GB free HDD space
 
 ## Preparation
-Download `FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz` from [AMD / Xilinx download page](https://www.xilinx.com/support/download.html) and place it in the same directory.
+- Download `FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz` from [download page](https://www.xilinx.com/support/download.html)
 
 ## Build
-
 ```bash
 sudo singularity build xilinx_2023.2.sif xilinx.def
 ```
