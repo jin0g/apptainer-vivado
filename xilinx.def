@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ubuntu:22.04
+From: ubuntu:18.04
 
 %files
 	FPGAs_AdaptiveSoCs_Unified_2023.2_1013_2256.tar.gz
