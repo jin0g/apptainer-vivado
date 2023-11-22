@@ -52,8 +52,8 @@ ssh:
 # Log into the VM
 $ limactl shell apptainer
 
-# Add Swap
-$ sudo dd if=/dev/zero of=/tmp/swapfile bs=1M count=8192
+# Add Swap (Required)
+$ sudo dd if=/dev/zero of=/tmp/swapfile bs=1M count=1024
 $ sudo chmod 600 /tmp/swapfile
 $ sudo mkswap /tmp/swapfile
 $ sudo swapon /tmp/swapfile
