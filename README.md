@@ -29,7 +29,7 @@ ln -s xilinx_2023.2.sif vitis_hls
 ./vitis_hls
 ```
 
-## You can also run on M1 Mac
+## You can also run Vivado on M1(ARM) Mac
 
 1. Install Lima, XQuartz, and Rosetta
 2. Create an Apptainer Container
