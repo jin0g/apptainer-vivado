@@ -1,5 +1,8 @@
-# Apptainer Containers for Xilinx Vivado / Vitis / Altera Quartus
+# Containers for Xilinx Vivado / Vitis / Altera Quartus
 
 ## Install
 1. Download *.tar.gz files in the same directory
-2. $ singularity build vivado_2024.1.sif vivado_2024.1.def
+```bash
+apptainer build vivado_2023.2.sif vivado_2023.2.def
+apptainer build vivado_2024.1.sif vivado_2024.1.def
+```
