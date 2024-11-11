@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: amd64/ubuntu:18.04
+From: amd64/ubuntu:22.04
 
 %files
 	FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar.gz
