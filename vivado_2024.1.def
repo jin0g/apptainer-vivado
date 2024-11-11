@@ -1,0 +1,21 @@
+Bootstrap: docker
+From: amd64/ubuntu:18.04
+
+%files
+	FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar.gz
+
+%post
+	tar -xzvf FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar.gz
+	rm FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023.tar.gz
+
+	cd FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/
+	./installLibs.sh
+	yes 1 | ./xsetup -b ConfigGen
+	./xsetup -b Install -a XilinxEULA,3rdPartyEULA -c /root/.Xilinx/install_config.txt
+
+	cd /
+	rm /root/.Xilinx/install_config.txt
+	rm -r FPGAs_AdaptiveSoCs_Unified_2024.1_0522_2023/
+
+%environment
+	source /tools/Xilinx/Vivado/2024.1/settings64.sh
